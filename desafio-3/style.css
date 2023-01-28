@@ -9,7 +9,7 @@
   --button-hover-secondary-color: #6a627f;
   --button-default-tertiart-color: #00000000;
   --button-focus-color: #D9CDF7;
-
+  cursor: url(./lib/cursor/cursor-default.svg), auto;
 }
 *{
   margin: 0;
@@ -68,6 +68,7 @@ header p {
 }
 .button:disabled{
   opacity: 0.56;
+  cursor: url(./lib/cursor/cursor-disabled.svg), auto;
 }
 .button:hover{
   transition: .5s;
@@ -80,6 +81,12 @@ header p {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 
+}
+.button:has(.button-load){
+  cursor: url(./lib/cursor/cursor-loading.svg), auto;
+}
+.button:has(.reorderTree){
+  cursor: url(./lib/cursor/cursor-movable.svg), auto;
 }
 /*--------------Setting button primary-------------*/
 .button-primary{
@@ -97,7 +104,7 @@ header p {
 .button-secondary:hover{
   background: var(--button-hover-secondary-color);
 }
-
+/*--------------Setting curso------------------*/
 @keyframes spin {
   to {transform: rotate(360deg);}
 }
