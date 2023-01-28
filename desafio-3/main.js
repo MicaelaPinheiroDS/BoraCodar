@@ -10,7 +10,7 @@ document.querySelector('#app').innerHTML = `
 </header>
 <div class="container-button">
   <button class="button-primary button">Interaja comigo</butoon>
-  <button class="button-secondary button">Interaja comigo</butoon>
+  <button class="button-secondary button"><span class="button-load"></span>Interaja comigo</butoon>
   <button class="button-tertiary button"><img src="${reorderTree}" alt="">Interaja comigo</butoon>
 </div>
 `;
