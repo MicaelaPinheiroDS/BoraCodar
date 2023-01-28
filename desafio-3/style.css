@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto&display=swap');
 
 :root{
-  --background-color: hsl(256, 33%, 9%);
-  --text-default-color: hsl(0, 0%, 100%);
-  --botton-default-primary-color:hsl(258, 73%, 62%);
-  --botton-hover-primary-color: hsl(258, 68%, 68%);
-  --botton-default-secondary-color: hsl(258, 13%, 25%);
-  --botton-hover-secondary-color: hsl(258, 13%, 44%);
-  --botton-default-tertiart-color: hsla(0, 0%, 0%, 0);
+  --background-color: #130f1f;
+  --text-default-color: #ffffff;
+  --button-default-primary-color:#8257e5;
+  --button-hover-primary-color: #9776e5;
+  --button-default-secondary-color: #3c3748;
+  --button-hover-secondary-color: #6a627f;
+  --button-default-tertiart-color: #00000000;
+  --button-focus-color: #D9CDF7;
 
 }
 *{
@@ -15,6 +16,8 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  outline: none;
+  box-shadow:none;
   font-family: 'Inter', sans-serif;
 }
 body {
@@ -56,23 +59,45 @@ header p {
 
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 8px;
 }
-.button-primary{
-  background: var(--botton-default-primary-color);
+.button:focus {
+  border: 2px solid var(--button-focus-color);
+  border-radius: 24px;
 }
-.button-secondary{
-  background: var(--botton-default-secondary-color);
-}
-.button-tertiary{
-  background: var(--botton-default-tertiart-color);
+.button:disabled{
+  opacity: 0.56;
 }
 .button:hover{
   transition: .5s;
 }
+.button-load {
+  border: 2px solid var(--text-default-color);
+  width: 16px;
+  height: 16px;
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+
+}
+/*--------------Setting button primary-------------*/
+.button-primary{
+  background: var(--button-default-primary-color);
+}
 .button-primary:hover{
-  background: var(--botton-hover-primary-color);
+  background: var(--button-hover-primary-color);
+}
+.button-secondary{
+  background: var(--button-default-secondary-color);
+}
+.button-tertiary{
+  background: var(--button-default-tertiart-color);
 }
 .button-secondary:hover{
-  background: var(--botton-hover-secondary-color);
+  background: var(--button-hover-secondary-color);
+}
+
+@keyframes spin {
+  to {transform: rotate(360deg);}
 }
