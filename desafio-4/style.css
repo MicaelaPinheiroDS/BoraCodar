@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root{
+  /*---------------Colors-----------------*/
+  --background-color:#1A1924;
+  --text-color: #E1E1E6;
+  --status-color: #00B37E;
+  --chat-bubble-primary-color: #633BBC;
+  --chat-bubble-secondary-color:#07847E;
+  --background-chat: #282843;
+  /*-----------------size-value------------------*/
+  --mobile-margin-inline: 30px;
+  --destop-margin-inline: 72px;
+  --chat-box-height: 45px;
+}
+*{
+  /*-------------------css-resetting----------------------*/
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  /*---------------default-font-setting-----------------*/
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/*----------------default-setting----------------------*/
+
+body{
+  background: var(--background-color);
+  color: var(--text-color);
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb{
+  background: #777777c4;
+  border-radius: 9999px;
+}
+#app {
+  margin: 24px auto;
+}
+
+/*-----------------header----------------*/
+header, main{
+  margin: 0 var(--mobile-margin-inline);
+}
+#header{
+  position: fixed;
+  z-index: 10;
+  width: calc(100% - (var(--mobile-margin-inline) * 2 ));
+  background: var(--background-color);
+}
+.main-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user{
+  display: flex;
+  gap: 16px;
+}
+.user-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.user-info h1 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+#status{
+  color: var(--status-color);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+}
+#status span {
+  background: var(--status-color);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.button-closed {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+}
+.button-closed span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  border-radius: 10px;
+  background: var(--text-color);
+}
+.button-closed span:nth-child(1){
+  transform: rotate(-45deg);
+}
+.button-closed span:nth-child(2){
+  transform: rotate(45deg);
+}
+.data-status{
+  margin-top: 26px;
+  text-align: center;
+}
+
+/*---------------------main-and-chat--------------*/
+
+main{
+  padding: calc(91px + 30px) 0 var(--chat-box-height);
+}
+.chat-bubble{
+  margin-bottom: 30px;
+}
+.chat-bubble h2 {
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+.chat-bubble p{
+  text-align: justify;
+  max-width: 149px;
+  padding: 14px;
+  background: var(--chat-bubble-primary-color);
+  border-radius: 0px 8px 8px;
+}
+.my-chat-bubble{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.my-chat-bubble p{
+  background: var(--chat-bubble-secondary-color);
+  border-radius: 8px 8px 0px;
+}
+/*-------------------chat-input-box---------------*/
+.chat-box-container{
+  background: var(--background-color);
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+}
+.chat-box{
+  position: fixed;
+  width: calc(100% - (var(--mobile-margin-inline) * 2 ));
+  left: 30px;
+  bottom: 0px;
+  background: var(--background-chat);
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+textarea{
+  background:  transparent;
+  width: calc(100% - 58px);
+  resize: none;
+  height: 100%;
+  padding: 14px;
+
+}
+textarea, textarea::placeholder{
+  color: var(--text-color);
+}
+textarea::placeholder{
+  position: absolute;
+  top: 35%;
+}
+.chat-box img {
+  position: absolute;
+  top: 25%;
+  right: 24px;
+  z-index: 10;
+  cursor: pointer;
+}
+/*-----------------desktop----------------------------*/
+@media screen and (min-width:1024px) {
+  .chat-bubble p{
+    width: fit-content;
+    max-width: 640px;
+  }
+  #header, main, .chat-box{
+    width: calc(100% - (var(--destop-margin-inline) * 2 ));
+    left: var(--destop-margin-inline);
+    right: var(--destop-margin-inline);
+    max-width: 1440px;
+    margin-inline: auto;
+
+  }
+}
