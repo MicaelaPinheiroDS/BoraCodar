@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root{
+  --background-color: #0F0D13;
+  --default-text-color: #E1E1E6;
+  --background-frame-play: #2A2141;
+  font-size: 62.5%;
+}
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ outline: none;
+
+ color: var(--default-text-color);
+ font-family: 'Roboto', sans-serif;
+ line-height: 100%;
+}
+body {
+  background: var(--background-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#app{
+
+  display: grid;
+
+  grid-template-rows: 2fr;
+  grid-template-columns: 2fr;
+  gap: 3.2rem;
+}
+.frame-play{
+  background: var(--background-frame-play);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.9rem;
+  padding: 2.9rem;
+}
+.frame-play div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2.9rem;
+}
+h1 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: .96rem;
+}
+.art-info span {
+font-size: 1.9rem;
+
+ opacity: 0.67;
+}
+.player-controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.trak-play {
+  display: flex;
+  flex-direction: column;
+  gap: .96rem;
+}
+.trak-play > span{
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  height: .6rem;
+  background: #D9D9D9;
+  border-radius: 1rem;
+}
+.trak-play span:first-child::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 125%;
+  height: .6rem;
+  border-radius: 1rem;
+  background: #D9D9D9;
+  opacity: .3;
+}
+.trak-time{
+  display: flex;
+  justify-content: space-between;
+  opacity: .7;
+}
+/*----------------------------------------------------*/
+.frame-play:nth-child(1){
+  padding: 3.8rem;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.frame-play:nth-child(1) .img-play {
+  width: 18.966rem;
+  height: 18.966rem;
+
+  margin-top: 1.2rem;
+}
+.frame-play:nth-child(1n+2) div:first-child{
+  flex-direction: row;
+  align-items: center;
+}
+.frame-play:nth-child(1n+2) .img-play > img{
+  width: 8.4rem;
+}
+.frame-play:nth-child(2){
+  grid-column-start: 2;
+  grid-row-end: 2;
+}
+.frame-play:last-child .trak-play{
+  display: none;
+}
+.frame-play:last-child{
+  grid-column-start: 2;
+  grid-row-end: 3;
+}
